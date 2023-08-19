@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Registe</title>
-</head>
-<body>
-	<form>
-		First Name:<input type="text"><br>
-		Last Name: <input type="text"><br>
-		Email: <input type="email" required ><br>
-		<input type="submit" value="Register!">	
-		<input type="reset">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Register</title>
+    </head>
+    <body>
+        <a href="index.html">Back</a>
+        <form method="get">
+            <!-- action="action.php"> -->
+            <!-- action runs this file when info is sent to the backend.  -->
+            First Name:<input type="text" name="firstname" /><br />
+            Last Name: <input type="text" name="lastname" /><br />
+            Email: <input type="email" required name="email" /><br />
+            <!-- required makes field mandatory to submit -->
+            Password: <input type="password" min="5" name="password" /> <br />
+            <!-- min is for minimum characters -->
+            Birthday: <input type="date" name="birthday" /><br />
+            Genter: <br />
+            <input type="radio" name="gender" value="Male" />Male<br />
+            <input type="radio" name="gender" value="Female" />Female<br />
+            <input type="radio" name="gender" value="Other" />Other<br />
+            <!--name attribute makes you select only one option instead of all-->
 
-	</form>
+            Pets: <br />
+            <input type="checkbox" name="cat" value="Cat" /> Cat <br />
+            <input type="checkbox" name="dog" value="Dog" /> Dog <br />
+            <!-- Checkbox lets you select multiple options -->
 
-</body>
+            Cars: <br />
+            <select name="cars">
+                <option value="volvo" name="volvo">Volvo</option>
+                <option value="audi" name="audi">Audi</option>
+            </select>
+            <!-- <select multiple> allows you to have multiple selections from the dropdown menu -->
+            <br />
+
+            <input type="submit" value="Register!" />
+            <input type="reset" />
+        </form>
+
+        <!-- THESE are query strings and it's a way to send info to the backend
+					<form method="GET"> will show query strings in the address bar
+					<form method="POST"> will NOT show query strings in the address bar
+
+						BEFORE
+
+					?firstname=Seb
+					&lastname=Mac
+					&email=seb%40preput.ro
+					&password=pasodjaspd
+					&birthday=2002-10-03
+					&gender=on
+					&cat=on
+
+					AFTER
+
+					?firstname=Sebastian
+					&lastname=Macovei
+					&email=Seb%40gmail.com
+					&password=Tanumotanu%21
+					&birthday=1983-10-15
+					&gender=Male
+					&cat=Cat
+					&cars=audi
+
+					every option needs a NAME and a VALUE to be submitted. otherwise it's just on
+			-->
+    </body>
 </html>
